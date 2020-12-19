@@ -1,0 +1,24 @@
+{
+  "tasks": [
+    {
+      "type": "execute",
+      "cmdline": "ls -a"
+    },
+    {
+      "type": "create_file",
+      "path_to_file": "foo.txt"
+    },
+    {
+      "type": "create_file",
+      "path_to_file": "bar.txt"
+    },
+    {
+      "type": "modify_file",
+      "path_to_file": "foo.txt"
+    },
+    {
+      "type": "remove_file",
+      "path_to_file": "bar.txt"
+    }
+  ]
+}

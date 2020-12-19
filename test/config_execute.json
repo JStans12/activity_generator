@@ -1,0 +1,8 @@
+{
+  "tasks": [
+    {
+      "type": "execute",
+      "cmdline": "ls -a"
+    }
+  ]
+}

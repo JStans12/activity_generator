@@ -1,0 +1,16 @@
+{
+  "tasks": [
+    {
+      "type": "create_file",
+      "path_to_file": "test_foo.txt"
+    },
+    {
+      "type": "modify_file",
+      "path_to_file": "test_foo.txt"
+    },
+    {
+      "type": "remove_file",
+      "path_to_file": "test_foo.txt"
+    }
+  ]
+}

@@ -35,16 +35,21 @@ class ActivityGenerator
       end
     end
 
-    File.open("./log/activity_log_#{Time.now.to_i}.json", 'a') do |f|
+    filename = "./log/activity_log_#{Time.now.to_i}.json"
+    File.open(filename, 'a') do |f|
       f << @output.to_json
     end
+
+    p "Activity log created - #{filename}"
+    filename
   end
 
   def execute_task(cmdline, context = {})
     pid = spawn(cmdline)
     # We don't care about the termination status, so we detach to avoid zombie processes.
-    Process.detach(pid)
     log_task(pid, context)
+    Process.detach(pid)
+
   end
 
   def execute_file_task(type, command, path_to_file)
@@ -63,7 +68,7 @@ class ActivityGenerator
       process_id: pid,
       process_name: process.name,
       process_command_line: process.cmdline,
-      user: process.environ[USER],
+      user: ENV[USER],
       start_time: process.start_tvsec
     }.merge(context)
   end

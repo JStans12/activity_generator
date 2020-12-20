@@ -19,6 +19,10 @@
     {
       "type": "remove_file",
       "path_to_file": "bar.txt"
+    },
+    {
+      "type": "network_connection"
     }
+
   ]
 }
